@@ -6,138 +6,149 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
+/* ===== MAIN DARK PREMIUM BACKGROUND ===== */
 body {
   margin: 0;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at top left, #f1fbf6, #dff3ea),
-              radial-gradient(circle at bottom right, #e6f6ef, #ffffff);
-  background-blend-mode: soft-light;
-  color: #0b3d2e;
   text-align: center;
-  overflow-x: hidden;
+  color: #e6f3ed;
+
+  background:
+    radial-gradient(circle at top left, rgba(40,80,65,0.35), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(20,40,35,0.45), transparent 55%),
+    linear-gradient(135deg, #0b1613, #111f1a);
 }
 
-/* floating light blobs */
-body::before,
-body::after {
+/* ===== SOFT BLUR + DEPTH OVERLAY ===== */
+body::before {
   content: "";
   position: fixed;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,162,77,0.18), transparent 70%);
-  filter: blur(60px);
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0.06),
+      rgba(0,0,0,0.15)
+    );
+  backdrop-filter: blur(6px);
+  pointer-events: none;
   z-index: 0;
 }
 
-body::before {
-  top: -120px;
-  left: -120px;
-}
-
-body::after {
-  bottom: -140px;
-  right: -140px;
-}
-
-/* header */
-header {
-  padding: 70px 20px 40px;
+header, .card, footer {
   position: relative;
   z-index: 1;
 }
 
+/* ===== HEADER ===== */
+header {
+  padding: 80px 20px 50px;
+}
+
 .brand-logo {
-  max-width: 320px;
-  width: 80%;
-  margin-bottom: 14px;
-  filter: brightness(1.15) contrast(1.1);
+  max-width: 340px;
+  width: 82%;
+  margin-bottom: 16px;
+  filter: brightness(1.25) contrast(1.15);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .brand-logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 14px 32px rgba(201,162,77,0.45));
+  transform: scale(1.06);
+  filter:
+    drop-shadow(0 18px 36px rgba(201,162,77,0.55))
+    brightness(1.35);
 }
 
 .brand-line {
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.78rem;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
-  color: #4f7f6b;
-  margin-top: 6px;
+  color: #9fcab6;
 }
 
 .tagline {
   font-size: 1.05rem;
-  color: #2f5f4b;
-  margin-top: 8px;
+  color: #cfe8dc;
 }
 
-/* glass card */
+/* ===== GOLD GLASS CARD ===== */
 .card {
-  margin: 50px auto;
-  max-width: 560px;
-  padding: 44px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.42);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(201,162,77,0.35);
+  margin: 40px auto;
+  max-width: 580px;
+  padding: 46px;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201,162,77,0.18),
+      rgba(201,162,77,0.06)
+    );
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(201,162,77,0.45);
+
   box-shadow:
-    0 30px 60px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.45);
-  transition: all 0.35s ease;
-  position: relative;
-  z-index: 1;
+    0 40px 90px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   box-shadow:
-    0 40px 80px rgba(0,0,0,0.16),
-    inset 0 1px 0 rgba(255,255,255,0.55);
+    0 55px 120px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .card h2 {
-  font-size: 2.1rem;
+  font-size: 2.15rem;
   margin-bottom: 14px;
-  color: #0b3d2e;
-  transition: color 0.3s ease;
-}
-
-.card:hover h2 {
-  color: #c9a24d;
+  color: #e8d9a6;
+  letter-spacing: 0.6px;
 }
 
 .card p {
-  color: #355f4e;
-  line-height: 1.65;
+  color: #e6f3ed;
+  line-height: 1.7;
 }
 
-/* whatsapp button */
+/* ===== WHATSAPP BUTTON ===== */
 .whatsapp-btn {
   margin-top: 30px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 15px 30px;
-  border-radius: 40px;
+  padding: 15px 34px;
+
   background: linear-gradient(135deg, #1fa86a, #0b7d57);
-  color: #fff;
-  font-weight: 600;
+  color: #ffffff;
   text-decoration: none;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
-  transition: all 0.3s ease;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition: all 0.35s ease;
 }
 
 .whatsapp-btn:hover {
   background: linear-gradient(135deg, #c9a24d, #b18a3d);
-  color: #0b3d2e;
-  transform: scale(1.06);
-  box-shadow: 0 20px 44px rgba(201,162,77,0.5);
+  color: #0b1613;
+  transform: scale(1.07);
+  box-shadow:
+    0 24px 55px rgba(201,162,77,0.65);
 }
 
 .whatsapp-btn img {
@@ -145,13 +156,12 @@ header {
   height: 22px;
 }
 
-/* footer */
+/* ===== FOOTER ===== */
 footer {
-  padding: 32px 20px;
-  font-size: 0.85rem;
-  color: #5f8f7b;
-  position: relative;
-  z-index: 1;
+  padding: 36px 20px;
+  font-size: 0.82rem;
+  color: #9fcab6;
+  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -161,21 +171,21 @@ footer {
 <header>
   <img src="logo.png" alt="YogiVerse Logo" class="brand-logo">
 
-  <div class="brand-line">
+  <p class="brand-line">
     From the House of <b>Akshar Sells</b>
-  </div>
+  </p>
 
-  <div class="tagline">
+  <p class="tagline">
     One Brand • Multiple Categories • Endless Possibilities
-  </div>
+  </p>
 </header>
 
 <div class="card">
   <h2>Coming Soon</h2>
 
   <p>
-    YogiVerse is launching with thoughtfully designed products that blend
-    everyday utility with refined aesthetics.
+    YogiVerse introduces thoughtfully designed lifestyle products
+    where everyday utility meets refined aesthetics.
   </p>
 
   <p style="margin-top:14px;">
@@ -183,19 +193,23 @@ footer {
     Toys & Kitchenware coming next.
   </p>
 
-  <a href="https://wa.me/917069062424" target="_blank" class="whatsapp-btn">
+  <a
+    href="https://wa.me/917069062424"
+    target="_blank"
+    class="whatsapp-btn"
+  >
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
     Chat with Akshar Sells
   </a>
 
-  <p style="margin-top:24px; font-size:0.85rem;">
+  <p style="margin-top:22px; font-size:0.85rem; color:#d6e9df;">
     📧 yogiverse.co@gmail.com<br>
     📧 aksharsells.surat@gmail.com
   </p>
 </div>
 
 <footer>
-  © 2026 YogiVerse — a brand operated by Akshar Sells.
+  © 2026 YogiVerse — A brand operated by Akshar Sells.
 </footer>
 
 </body>
