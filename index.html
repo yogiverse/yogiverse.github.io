@@ -5,92 +5,161 @@
   <meta charset="UTF-8">
   <title>YogiVerse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg,#0b3d2e,#0f5e44,#c9a24d);
-      color: white;
-      text-align: center;
-    }
-    header {
-      padding: 60px 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 35px;
-      margin: 40px auto;
-      max-width: 520px;
-      border-radius: 16px;
-      border: 1px solid rgba(201, 162, 77, 0.4);
-      backdrop-filter: blur(6px);
-    }
-
-    footer {
-      padding: 20px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #eaf7f1, #dff3ea);
+        color: #0b3d2e;
+        text-align: center;
+      }
+    
+      header {
+        padding: 70px 20px 40px;
+      }
+    
+      h1 {
+        font-size: 3.2rem;
+        margin-bottom: 8px;
+        color: #0b3d2e;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+    
+      h1:hover {
+        color: #c9a24d; /* gold on hover */
+      }
+    
+      header p {
+        margin: 6px 0;
+      }
+    
+      .brand-line {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #4f7f6b;
+      }
+    
+      .tagline {
+        font-size: 1.05rem;
+        color: #2f5f4b;
+      }
+    
+      .card {
+        background: rgba(255, 255, 255, 0.65);
+        padding: 40px;
+        margin: 40px auto;
+        max-width: 560px;
+        border-radius: 18px;
+        border: 1px solid rgba(201, 162, 77, 0.45);
+        backdrop-filter: blur(10px);
+        transition: all 0.35s ease;
+      }
+    
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+    
+      .card h2 {
+        color: #0b3d2e;
+        font-size: 2rem;
+        margin-bottom: 12px;
+        transition: color 0.3s ease;
+      }
+    
+      .card:hover h2 {
+        color: #c9a24d;
+      }
+    
+      .card p {
+        color: #355f4e;
+        line-height: 1.6;
+      }
+    
+      .whatsapp-btn {
+        margin-top: 28px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 28px;
+        background: linear-gradient(135deg, #1fa86a, #0b7d57);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 40px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      }
+    
+      .whatsapp-btn:hover {
+        background: linear-gradient(135deg, #c9a24d, #b18a3d);
+        color: #0b3d2e;
+        transform: scale(1.05);
+        box-shadow: 0 14px 32px rgba(201, 162, 77, 0.45);
+      }
+    
+      .whatsapp-btn img {
+        width: 22px;
+        height: 22px;
+      }
+    
+      footer {
+        padding: 30px 20px;
+        font-size: 0.85rem;
+        color: #5f8f7b;
+      }
+    </style>
 </head>
 <body>
 
 <header>
   <h1>YogiVerse 🌌</h1>
 
-  <p style="
-    font-size:0.95rem;
-    letter-spacing:1px;
-    opacity:0.85;
-    text-transform:uppercase;
-  ">
+  <p class="brand-line">
     From the House of <b>Akshar Sells</b>
   </p>
 
-  <p style="margin-top:10px;">
+  <p class="tagline">
     One Brand • Multiple Categories • Endless Possibilities
   </p>
 </header>
 
 <div class="card">
-  <h2>🚀 Coming Soon</h2>
-  <p style="margin-bottom:15px;">
-    YogiVerse is launching soon with thoughtfully designed products
-    that make everyday life simple and organized.
+  <h2>Coming Soon</h2>
+
+  <p>
+    YogiVerse is launching with thoughtfully designed products that blend
+    everyday utility with refined aesthetics.
   </p>
 
-  <p style="font-size:0.95rem; opacity:0.85;">
+  <p style="margin-top:12px;">
     Starting with <b>Smart Organizer Pouches</b><br>
     Toys & Kitchenware coming next.
   </p>
 
-  <div style="margin-top:25px;">
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:14px 26px;
-      background: linear-gradient(135deg,#1ebc73,#128c7e);
-      color:#fff;
-      text-decoration:none;
-      border-radius:40px;
-      font-weight:600;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    ">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-           alt="WhatsApp"
-           style="width:22px;height:22px;">
-      Chat with Akshar Sells on WhatsApp
-    </a>
-  </div>
+  <a
+    href="https://wa.me/917069062424"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+    Chat with Akshar Sells
+  </a>
+
+  <p style="margin-top:22px; font-size:0.85rem;">
+    📧 contact@yogiverse.co.in
+  </p>
+</div>
 
   <p style="margin-top:20px; font-size:0.85rem; opacity:0.8;">
     📧 Email: yogiverse.co@gmail.com
