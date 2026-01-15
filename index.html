@@ -19,9 +19,27 @@
       }
     
       header {
+        position: relative;
         padding: 70px 20px 40px;
       }
-    
+      
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.10),
+          rgba(0, 0, 0, 0)
+        );
+        pointer-events: none;
+      }
+      
+      header * {
+        position: relative;
+        z-index: 1;
+      }
+           
       h1 {
         font-size: 3.2rem;
         margin-bottom: 8px;
@@ -121,6 +139,7 @@
         width: 80%;
         margin-bottom: 10px;
         transition: transform 0.4s ease, filter 0.4s ease;
+        filter: brightness(1.12) contrast(1.08);
       }
       
       .brand-logo:hover {
