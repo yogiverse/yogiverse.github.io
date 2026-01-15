@@ -115,12 +115,29 @@
         font-size: 0.85rem;
         color: #5f8f7b;
       }
+
+      .brand-logo {
+        max-width: 320px;
+        width: 80%;
+        margin-bottom: 10px;
+        transition: transform 0.4s ease, filter 0.4s ease;
+      }
+      
+      .brand-logo:hover {
+        transform: scale(1.04);
+        filter: drop-shadow(0 12px 28px rgba(201, 162, 77, 0.45));
+      }
+
     </style>
 </head>
 <body>
 
 <header>
-  <h1>YogiVerse 🌌</h1>
+  <img
+    src="logo.png"
+    alt="YogiVerse Logo"
+    class="brand-logo"
+  />
 
   <p class="brand-line">
     From the House of <b>Akshar Sells</b>
