@@ -1,178 +1,165 @@
-  <!-- classic github pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>YogiVerse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(
-          120deg,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0.15)
-        );
-        pointer-events: none;
-        z-index: 0;
-      }
+<meta charset="UTF-8">
+<title>YogiVerse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      * {
-        box-sizing: border-box;
-      }
-    
-      body {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: linear-gradient(135deg, #eaf7f1, #dff3ea);
-        color: #0b3d2e;
-        text-align: center;
-      }
-    
-      header {
-        position: relative;
-        padding: 70px 20px 40px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0)
-        );
-        backdrop-filter: blur(6px);
-      }
-      
-      header * {
-        position: relative;
-        z-index: 1;
-      }
-           
-      h1 {
-        font-size: 3.2rem;
-        margin-bottom: 8px;
-        color: #0b3d2e;
-        letter-spacing: 1px;
-        transition: color 0.3s ease;
-      }
-    
-      h1:hover {
-        color: #c9a24d; /* gold on hover */
-      }
-    
-      header p {
-        margin: 6px 0;
-      }
-    
-      .brand-line {
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #4f7f6b;
-      }
-    
-      .tagline {
-        font-size: 1.05rem;
-        color: #2f5f4b;
-      }
-    
-      .card {
-        background: rgba(255, 255, 255, 0.45);
-        padding: 42px;
-        margin: 40px auto;
-        max-width: 560px;
-        border-radius: 20px;
-      
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-      
-        border: 1px solid rgba(201, 162, 77, 0.35);
-        box-shadow:
-          0 20px 40px rgba(0, 0, 0, 0.08),
-          inset 0 1px 0 rgba(255, 255, 255, 0.4);
-      
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
-      }
-      
-      .card:hover {
-        transform: translateY(-6px);
-        box-shadow:
-          0 28px 60px rgba(0, 0, 0, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.45);
-      }
-    
-      .card h2 {
-        color: #0b3d2e;
-        font-size: 2rem;
-        margin-bottom: 12px;
-        transition: color 0.3s ease;
-      }
-    
-      .card:hover h2 {
-        color: #c9a24d;
-      }
-    
-      .card p {
-        color: #355f4e;
-        line-height: 1.6;
-      }
-    
-      .whatsapp-btn {
-        margin-top: 28px;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 28px;
-        background: linear-gradient(135deg, #1fa86a, #0b7d57);
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 40px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-      }
-    
-      .whatsapp-btn:hover {
-        background: linear-gradient(135deg, #c9a24d, #b18a3d);
-        color: #0b3d2e;
-        transform: scale(1.05);
-        box-shadow: 0 14px 32px rgba(201, 162, 77, 0.45);
-      }
-    
-      .whatsapp-btn img {
-        width: 22px;
-        height: 22px;
-      }
-    
-      footer {
-        padding: 30px 20px;
-        font-size: 0.85rem;
-        color: #5f8f7b;
-      }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-      .brand-logo {
-        max-width: 320px;
-        width: 80%;
-        margin-bottom: 10px;
-        transition: transform 0.4s ease, filter 0.4s ease;
-        filter: brightness(1.12) contrast(1.08);
-      }
-      
-      .brand-logo:hover {
-        transform: scale(1.04);
-        filter: drop-shadow(0 12px 28px rgba(201, 162, 77, 0.45));
-      }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #0b3d2e;
+  text-align: center;
 
-    </style>
+  /* PREMIUM DEPTH BACKGROUND */
+  background:
+    radial-gradient(circle at top left, #f3fbf7 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #d8efe3 0%, transparent 55%),
+    linear-gradient(135deg, #eef9f4, #d9efe4);
+}
+
+/* SOFT TRANSPARENCY VEIL */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0.35),
+      rgba(255,255,255,0.1)
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+header, .card, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER */
+header {
+  padding: 70px 20px 40px;
+}
+
+.brand-logo {
+  max-width: 320px;
+  width: 80%;
+  margin-bottom: 14px;
+  filter: brightness(1.15) contrast(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 16px 34px rgba(201,162,77,0.45));
+}
+
+.brand-line {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4f7f6b;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #2f5f4b;
+}
+
+/* GLASS CARD */
+.card {
+  margin: 40px auto;
+  max-width: 560px;
+  padding: 44px;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(201,162,77,0.35);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.card h2 {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  color: #0b3d2e;
+  transition: color 0.3s ease;
+}
+
+.card:hover h2 {
+  color: #c9a24d;
+}
+
+.card p {
+  color: #355f4e;
+  line-height: 1.65;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+
+  background: linear-gradient(135deg, #1fa86a, #0b7d57);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+  transition: all 0.35s ease;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #c9a24d, #b18a3d);
+  color: #0b3d2e;
+  transform: scale(1.06);
+  box-shadow: 0 18px 40px rgba(201,162,77,0.45);
+}
+
+.whatsapp-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* FOOTER */
+footer {
+  padding: 34px 20px;
+  font-size: 0.85rem;
+  color: #5f8f7b;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <img
-    src="logo.png"
-    alt="YogiVerse Logo"
-    class="brand-logo"
-  />
+  <img src="logo.png" alt="YogiVerse Logo" class="brand-logo">
 
   <p class="brand-line">
     From the House of <b>Akshar Sells</b>
@@ -191,7 +178,7 @@
     everyday utility with refined aesthetics.
   </p>
 
-  <p style="margin-top:12px;">
+  <p style="margin-top:14px;">
     Starting with <b>Smart Organizer Pouches</b><br>
     Toys & Kitchenware coming next.
   </p>
@@ -201,21 +188,18 @@
     target="_blank"
     class="whatsapp-btn"
   >
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-      alt="WhatsApp"
-    />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
     Chat with Akshar Sells
   </a>
 
   <p style="margin-top:22px; font-size:0.85rem;">
-    📧 Email: yogiverse.co@gmail.com
-    📧 Email: aksharsells.surat@gmail.com
+    📧 yogiverse.co@gmail.com<br>
+    📧 aksharsells.surat@gmail.com
   </p>
 </div>
 
 <footer>
-  © 2026 YogiVerse. a brand operated by Akshar Sells.
+  © 2026 YogiVerse — A brand operated by Akshar Sells.
 </footer>
 
 </body>
