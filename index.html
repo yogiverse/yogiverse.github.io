@@ -23,17 +23,16 @@ body {
     linear-gradient(135deg, #0b1613, #111f1a);
 }
 
-/* ===== SOFT BLUR + DEPTH OVERLAY ===== */
+/* ===== SOFT DEPTH OVERLAY ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(255,255,255,0.06),
-      rgba(0,0,0,0.15)
-    );
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.05),
+    rgba(0,0,0,0.18)
+  );
   backdrop-filter: blur(6px);
   pointer-events: none;
   z-index: 0;
@@ -46,27 +45,51 @@ header, .card, footer {
 
 /* ===== HEADER ===== */
 header {
-  padding: 80px 20px 50px;
+  padding: 90px 20px 50px;
 }
 
+/* ===== LOGO GLASS HALO ===== */
+.logo-wrap {
+  display: inline-block;
+  padding: 26px 40px;
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.35),
+      rgba(255,255,255,0.05)
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+
+  border: 1px solid rgba(201,162,77,0.45);
+  margin-bottom: 22px;
+}
+
+/* ===== LOGO ===== */
 .brand-logo {
   max-width: 340px;
   width: 82%;
-  margin-bottom: 16px;
-  filter: brightness(1.25) contrast(1.15);
+  filter: brightness(1.35) contrast(1.2);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .brand-logo:hover {
   transform: scale(1.06);
   filter:
-    drop-shadow(0 18px 36px rgba(201,162,77,0.55))
-    brightness(1.35);
+    brightness(1.45)
+    drop-shadow(0 18px 36px rgba(201,162,77,0.6));
 }
 
 .brand-line {
   font-size: 0.78rem;
-  letter-spacing: 2.2px;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
   color: #9fcab6;
 }
@@ -78,25 +101,22 @@ header {
 
 /* ===== GOLD GLASS CARD ===== */
 .card {
-  margin: 40px auto;
+  margin: 44px auto;
   max-width: 580px;
   padding: 46px;
   border-radius: 24px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(201,162,77,0.18),
-      rgba(201,162,77,0.06)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(201,162,77,0.2),
+    rgba(201,162,77,0.07)
+  );
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
+  backdrop-filter: blur(22px);
   border: 1px solid rgba(201,162,77,0.45);
 
   box-shadow:
-    0 40px 90px rgba(0,0,0,0.55),
+    0 40px 90px rgba(0,0,0,0.6),
     inset 0 1px 0 rgba(255,255,255,0.25);
 
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -105,15 +125,12 @@ header {
 .card:hover {
   transform: translateY(-10px);
   box-shadow:
-    0 55px 120px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.3);
+    0 55px 120px rgba(0,0,0,0.75);
 }
 
 .card h2 {
   font-size: 2.15rem;
-  margin-bottom: 14px;
   color: #e8d9a6;
-  letter-spacing: 0.6px;
 }
 
 .card p {
@@ -134,12 +151,8 @@ header {
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
-  letter-spacing: 0.5px;
 
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.6),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
   transition: all 0.35s ease;
 }
 
@@ -147,13 +160,11 @@ header {
   background: linear-gradient(135deg, #c9a24d, #b18a3d);
   color: #0b1613;
   transform: scale(1.07);
-  box-shadow:
-    0 24px 55px rgba(201,162,77,0.65);
+  box-shadow: 0 24px 55px rgba(201,162,77,0.65);
 }
 
 .whatsapp-btn img {
   width: 22px;
-  height: 22px;
 }
 
 /* ===== FOOTER ===== */
@@ -161,7 +172,6 @@ footer {
   padding: 36px 20px;
   font-size: 0.82rem;
   color: #9fcab6;
-  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -169,7 +179,10 @@ footer {
 <body>
 
 <header>
-  <img src="logo.png" alt="YogiVerse Logo" class="brand-logo">
+
+  <div class="logo-wrap">
+    <img src="logo.png" alt="YogiVerse Logo" class="brand-logo">
+  </div>
 
   <p class="brand-line">
     From the House of <b>Akshar Sells</b>
@@ -178,6 +191,7 @@ footer {
   <p class="tagline">
     One Brand • Multiple Categories • Endless Possibilities
   </p>
+
 </header>
 
 <div class="card">
@@ -193,16 +207,12 @@ footer {
     Toys & Kitchenware coming next.
   </p>
 
-  <a
-    href="https://wa.me/917069062424"
-    target="_blank"
-    class="whatsapp-btn"
-  >
+  <a href="https://wa.me/917069062424" target="_blank" class="whatsapp-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
     Chat with Akshar Sells
   </a>
 
-  <p style="margin-top:22px; font-size:0.85rem; color:#d6e9df;">
+  <p style="margin-top:22px; font-size:0.85rem;">
     📧 yogiverse.co@gmail.com<br>
     📧 aksharsells.surat@gmail.com
   </p>
