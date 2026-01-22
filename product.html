@@ -2,117 +2,167 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>YogiVerse Antler Wall Hook</title>
+<title>YogiVerse™ Self Adhesive Antler Wall Hook</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  margin:0;
-  font-family:Segoe UI,system-ui;
-  background:linear-gradient(135deg,#0b1613,#111f1a);
-  color:#e6f3ed;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg,#0b1613,#111f1a);
+  color: #e6f3ed;
 }
 
 /* NAV */
-nav{
-  padding:18px 40px;
-  background:rgba(0,0,0,0.45);
-  backdrop-filter:blur(14px);
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(10,20,18,0.9);
 }
 
-nav a{
-  color:#cfe8dc;
-  text-decoration:none;
+.navbar img {
+  height: 34px;
+}
+
+.navbar a {
+  color: #cfe8dc;
+  text-decoration: none;
+  margin-left: 22px;
 }
 
 /* PRODUCT */
-.product{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  padding:60px;
+.product-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
-.main-img img{
-  width:100%;
-  border-radius:18px;
+.main-image img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
 }
 
-.thumbs img{
-  width:70px;
-  margin:6px;
-  cursor:pointer;
-  opacity:.7;
+.thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.thumbs img:hover{opacity:1}
-
-h1{color:#e8d9a6}
-
-.price{
-  font-size:1.8rem;
-  color:#c9a24d;
-  margin:14px 0;
+.thumbs img {
+  width: 60px;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
-.buy{
-  display:inline-block;
-  padding:14px 32px;
-  background:#1fa86a;
-  color:#fff;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:600;
+.product-info h1 {
+  font-size: 1.6rem;
+  color: #e8d9a6;
 }
 
-.buy:hover{background:#c9a24d;color:#0b1613}
+.product-info ul {
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: #c9a24d;
+  margin: 16px 0;
+}
+
+.amazon-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #1fa86a;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.amazon-btn:hover {
+  background: #c9a24d;
+  color: #0b1613;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.8rem;
+  color: #9fcab6;
+}
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">← Back to Home</a>
-</nav>
-
-<section class="product">
+<div class="navbar">
+  <img src="logo.png">
   <div>
-    <div class="main-img">
+    <a href="index.html">Home</a>
+    <a href="#">Contact Us</a>
+  </div>
+</div>
+
+<div class="product-container">
+
+  <!-- LEFT -->
+  <div>
+    <div class="main-image">
       <img src="1.jpg" id="mainImg">
     </div>
+
     <div class="thumbs">
-      <img src="1.jpg" onclick="img(this)">
-      <img src="7.jpg" onclick="img(this)">
-      <img src="6.jpg" onclick="img(this)">
-      <img src="5.jpg" onclick="img(this)">
-      <img src="4.jpg" onclick="img(this)">
-      <img src="3.jpg" onclick="img(this)">
-      <img src="2.jpg" onclick="img(this)">
+      <img src="1.jpg" onclick="swap(this.src)">
+      <img src="2.jpg" onclick="swap(this.src)">
+      <img src="3.jpg" onclick="swap(this.src)">
+      <img src="4.jpg" onclick="swap(this.src)">
+      <img src="5.jpg" onclick="swap(this.src)">
+      <img src="6.jpg" onclick="swap(this.src)">
+      <img src="7.jpg" onclick="swap(this.src)">
     </div>
   </div>
 
-  <div>
-    <h1>YogiVerse™ Self Adhesive Antler Wall Hook</h1>
+  <!-- RIGHT -->
+  <div class="product-info">
+    <h1>
+      YogiVerse™ Self Adhesive Wall Hooks | Multipurpose Antler Deer Head Decorative Wall Hook
+    </h1>
 
-    <p>
-      ✔ No drilling | Damage-free installation<br>
-      ✔ Multipurpose daily use<br>
-      ✔ Strong adhesive & durable ABS plastic<br>
-      ✔ Decorative antler design<br>
-      ✔ Bathroom, kitchen, bedroom & door use
-    </p>
+    <ul>
+      <li>No drilling | Damage-free installation</li>
+      <li>Multipurpose daily use</li>
+      <li>Strong adhesive & durable ABS plastic</li>
+      <li>Decorative antler deer design</li>
+      <li>Bathroom, kitchen, bedroom & door use</li>
+    </ul>
 
     <div class="price">₹299</div>
 
-    <a href="https://www.amazon.in/" target="_blank" class="buy">
+    <a
+      href="https://www.amazon.in/"
+      target="_blank"
+      class="amazon-btn"
+    >
       Available on Amazon
     </a>
   </div>
-</section>
+
+</div>
+
+<footer>
+  © 2026 YogiVerse — A brand operated by Akshar Sells
+</footer>
 
 <script>
-function img(el){
-  document.getElementById("mainImg").src = el.src;
+function swap(src) {
+  document.getElementById("mainImg").src = src;
 }
 </script>
 
