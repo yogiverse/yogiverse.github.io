@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YogiVerse Antler Wall Hook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,system-ui;
+  background:linear-gradient(135deg,#0b1613,#111f1a);
+  color:#e6f3ed;
+}
+
+/* NAV */
+nav{
+  padding:18px 40px;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(14px);
+}
+
+nav a{
+  color:#cfe8dc;
+  text-decoration:none;
+}
+
+/* PRODUCT */
+.product{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:60px;
+}
+
+.main-img img{
+  width:100%;
+  border-radius:18px;
+}
+
+.thumbs img{
+  width:70px;
+  margin:6px;
+  cursor:pointer;
+  opacity:.7;
+}
+
+.thumbs img:hover{opacity:1}
+
+h1{color:#e8d9a6}
+
+.price{
+  font-size:1.8rem;
+  color:#c9a24d;
+  margin:14px 0;
+}
+
+.buy{
+  display:inline-block;
+  padding:14px 32px;
+  background:#1fa86a;
+  color:#fff;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.buy:hover{background:#c9a24d;color:#0b1613}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<section class="product">
+  <div>
+    <div class="main-img">
+      <img src="1.jpg" id="mainImg">
+    </div>
+    <div class="thumbs">
+      <img src="1.jpg" onclick="img(this)">
+      <img src="7.jpg" onclick="img(this)">
+      <img src="6.jpg" onclick="img(this)">
+      <img src="5.jpg" onclick="img(this)">
+      <img src="4.jpg" onclick="img(this)">
+      <img src="3.jpg" onclick="img(this)">
+      <img src="2.jpg" onclick="img(this)">
+    </div>
+  </div>
+
+  <div>
+    <h1>YogiVerse™ Self Adhesive Antler Wall Hook</h1>
+
+    <p>
+      ✔ No drilling | Damage-free installation<br>
+      ✔ Multipurpose daily use<br>
+      ✔ Strong adhesive & durable ABS plastic<br>
+      ✔ Decorative antler design<br>
+      ✔ Bathroom, kitchen, bedroom & door use
+    </p>
+
+    <div class="price">₹299</div>
+
+    <a href="https://www.amazon.in/" target="_blank" class="buy">
+      Available on Amazon
+    </a>
+  </div>
+</section>
+
+<script>
+function img(el){
+  document.getElementById("mainImg").src = el.src;
+}
+</script>
+
+</body>
+</html>
