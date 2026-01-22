@@ -6,14 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* ===== MAIN DARK PREMIUM BACKGROUND ===== */
+/* ===== BACKGROUND ===== */
 body {
   margin: 0;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   text-align: center;
   color: #e6f3ed;
 
@@ -23,23 +21,21 @@ body {
     linear-gradient(135deg, #0b1613, #111f1a);
 }
 
-/* ===== SOFT BLUR + DEPTH OVERLAY ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(255,255,255,0.06),
-      rgba(0,0,0,0.15)
-    );
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.05),
+    rgba(0,0,0,0.18)
+  );
   backdrop-filter: blur(6px);
   pointer-events: none;
   z-index: 0;
 }
 
-header, .card, footer {
+header, .card, section, footer {
   position: relative;
   z-index: 1;
 }
@@ -49,19 +45,30 @@ header {
   padding: 80px 20px 50px;
 }
 
+/* ⭐ LOGO GLASS FIX */
+.logo-glass {
+  display: inline-block;
+  padding: 26px 38px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+  margin-bottom: 18px;
+}
+
 .brand-logo {
-  max-width: 340px;
+  max-width: 320px;
   width: 82%;
-  margin-bottom: 16px;
-  filter: brightness(1.25) contrast(1.15);
+  filter: brightness(1.3) contrast(1.15);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .brand-logo:hover {
-  transform: scale(1.06);
-  filter:
-    drop-shadow(0 18px 36px rgba(201,162,77,0.55))
-    brightness(1.35);
+  transform: scale(1.05);
+  filter: drop-shadow(0 18px 36px rgba(201,162,77,0.55)) brightness(1.4);
 }
 
 .brand-line {
@@ -76,84 +83,102 @@ header {
   color: #cfe8dc;
 }
 
-/* ===== GOLD GLASS CARD ===== */
+/* ===== MAIN CARD ===== */
 .card {
   margin: 40px auto;
   max-width: 580px;
   padding: 46px;
   border-radius: 24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(201,162,77,0.18),
-      rgba(201,162,77,0.06)
-    );
-
+  background: linear-gradient(
+    135deg,
+    rgba(201,162,77,0.18),
+    rgba(201,162,77,0.06)
+  );
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
   border: 1px solid rgba(201,162,77,0.45);
-
-  box-shadow:
-    0 40px 90px rgba(0,0,0,0.55),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow:
-    0 55px 120px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.3);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.55);
 }
 
 .card h2 {
   font-size: 2.15rem;
-  margin-bottom: 14px;
+  color: #0f3b2b;
+  transition: color 0.3s ease;
+}
+
+.card h2:hover {
   color: #e8d9a6;
-  letter-spacing: 0.6px;
 }
 
-.card p {
-  color: #e6f3ed;
-  line-height: 1.7;
-}
-
-/* ===== WHATSAPP BUTTON ===== */
+/* ===== WHATSAPP ===== */
 .whatsapp-btn {
   margin-top: 30px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 15px 34px;
-
   background: linear-gradient(135deg, #1fa86a, #0b7d57);
-  color: #ffffff;
-  text-decoration: none;
+  color: #fff;
   border-radius: 50px;
+  text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.5px;
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.6),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-
   transition: all 0.35s ease;
 }
 
 .whatsapp-btn:hover {
   background: linear-gradient(135deg, #c9a24d, #b18a3d);
   color: #0b1613;
-  transform: scale(1.07);
-  box-shadow:
-    0 24px 55px rgba(201,162,77,0.65);
+  transform: scale(1.06);
 }
 
-.whatsapp-btn img {
-  width: 22px;
-  height: 22px;
+/* ===== PRODUCT SECTION ===== */
+.product-section {
+  margin: 80px auto;
+  max-width: 900px;
+  padding: 50px 30px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.product-title {
+  font-size: 2rem;
+  color: #e8d9a6;
+}
+
+.product-sub {
+  color: #cfe8dc;
+  margin-bottom: 30px;
+}
+
+.gallery img {
+  border-radius: 14px;
+}
+
+.main-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.thumbs {
+  margin-top: 20px;
+}
+
+.thumbs img {
+  width: 70px;
+  margin: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.thumbs img:hover {
+  opacity: 1;
+}
+
+.product-points {
+  margin-top: 30px;
+  color: #e6f3ed;
 }
 
 /* ===== FOOTER ===== */
@@ -161,7 +186,6 @@ footer {
   padding: 36px 20px;
   font-size: 0.82rem;
   color: #9fcab6;
-  letter-spacing: 0.5px;
 }
 </style>
 </head>
@@ -169,56 +193,30 @@ footer {
 <body>
 
 <header>
-  <img src="logo.png" alt="YogiVerse Logo" class="brand-logo">
+  <div class="logo-glass">
+    <img src="logo.png" class="brand-logo" alt="YogiVerse Logo">
+  </div>
 
-  <p class="brand-line">
-    From the House of <b>Akshar Sells</b>
-  </p>
-
-  <p class="tagline">
-    One Brand • Multiple Categories • Endless Possibilities
-  </p>
+  <p class="brand-line">From the House of <b>Akshar Sells</b></p>
+  <p class="tagline">One Brand • Multiple Categories • Endless Possibilities</p>
 </header>
 
 <div class="card">
   <h2>Coming Soon</h2>
+  <p>Thoughtfully designed lifestyle products where utility meets elegance.</p>
 
-  <p>
-    YogiVerse introduces thoughtfully designed lifestyle products
-    where everyday utility meets refined aesthetics.
-  </p>
-
-  <p style="margin-top:14px;">
-    Starting with <b>Smart Organizer Pouches</b><br>
-    Toys & Kitchenware coming next.
-  </p>
-
-  <a
-    href="https://wa.me/917069062424"
-    target="_blank"
-    class="whatsapp-btn"
-  >
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  <a href="https://wa.me/917069062424" target="_blank" class="whatsapp-btn">
     Chat with Akshar Sells
   </a>
-
-  <p style="margin-top:22px; font-size:0.85rem; color:#d6e9df;">
-    📧 yogiverse.co@gmail.com<br>
-    📧 aksharsells.surat@gmail.com
-  </p>
 </div>
 
 <section class="product-section">
-
-  <h2 class="product-title">Premium Self-Adhesive Antler Hooks</h2>
-  <p class="product-sub">
-    Strong hold • No drilling • Modern design
-  </p>
+  <h2 class="product-title">Self-Adhesive Antler Hooks</h2>
+  <p class="product-sub">No drilling • Strong hold • Decorative design</p>
 
   <div class="gallery">
-
     <div class="main-image">
-      <img src="1.jpg" id="currentImage" alt="Antler Hook">
+      <img src="1.jpg" id="currentImage">
     </div>
 
     <div class="thumbs">
@@ -230,35 +228,29 @@ footer {
       <img src="3.jpg" onclick="changeImage(this.src)">
       <img src="2.jpg" onclick="changeImage(this.src)">
     </div>
-
   </div>
 
   <div class="product-points">
-    <p>✔ Self-adhesive strong hold (up to 2 kg*)</p>
-    <p>✔ No drilling • No wall damage</p>
-    <p>✔ Stylish antler-inspired design</p>
-    <p>✔ Ideal for keys, bags, towels & accessories</p>
-    <p>✔ Available in 4 premium color options</p>
+    ✔ No drilling, damage-free installation<br>
+    ✔ Strong adhesive (up to 2 kg*)<br>
+    ✔ Modern antler design<br>
+    ✔ Bathroom, kitchen & bedroom use
   </div>
 
-  <a
-    href="https://wa.me/917069062424"
-    target="_blank"
-    class="whatsapp-btn"
-  >
-    Chat on WhatsApp
+  <br>
+  <a href="https://www.amazon.in/" target="_blank" class="whatsapp-btn">
+    Available on Amazon
   </a>
-
 </section>
 
 <script>
-  function changeImage(src) {
-    document.getElementById("currentImage").src = src;
-  }
+function changeImage(src) {
+  document.getElementById("currentImage").src = src;
+}
 </script>
 
 <footer>
-  © 2026 YogiVerse — A brand operated by Akshar Sells.
+© 2026 YogiVerse — A brand operated by Akshar Sells.
 </footer>
 
 </body>
