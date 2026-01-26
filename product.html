@@ -8,44 +8,44 @@
 <style>
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: linear-gradient(135deg,#0b1613,#111f1a);
-  color: #e6f3ed;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 /* NAV */
-.navbar {
+nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
-  background: rgba(10,20,18,0.9);
+  align-items: center;
+  padding: 26px 60px;
 }
 
-.navbar img {
+nav img {
   height: 34px;
 }
 
-.navbar a {
-  color: #cfe8dc;
+nav a {
+  margin-left: 28px;
   text-decoration: none;
-  margin-left: 22px;
+  color: #1a1a1a;
+  font-size: 0.95rem;
 }
 
 /* PRODUCT */
-.product-container {
-  max-width: 1200px;
+.product {
+  max-width: 1100px;
   margin: auto;
-  padding: 60px 40px;
+  padding: 80px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
 }
 
-.main-image img {
+/* GALLERY */
+.main img {
   width: 100%;
-  max-height: 380px;
-  object-fit: contain;
+  background: #f7f7f7;
 }
 
 .thumbs {
@@ -57,64 +57,65 @@ body {
 .thumbs img {
   width: 60px;
   cursor: pointer;
-  border-radius: 6px;
+  background: #f7f7f7;
 }
 
-.product-info h1 {
+/* INFO */
+.info h1 {
   font-size: 1.6rem;
-  color: #e8d9a6;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
-.product-info ul {
+.info ul {
   padding-left: 18px;
   line-height: 1.7;
+  color: #555;
 }
 
 .price {
-  font-size: 1.4rem;
-  color: #c9a24d;
-  margin: 16px 0;
+  font-size: 1.2rem;
+  margin: 20px 0;
 }
 
-.amazon-btn {
+.amazon {
   display: inline-block;
-  padding: 12px 26px;
-  background: #1fa86a;
-  color: #fff;
-  border-radius: 30px;
+  padding: 10px 26px;
+  border: 1px solid #1a1a1a;
   text-decoration: none;
-  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.9rem;
 }
 
-.amazon-btn:hover {
-  background: #c9a24d;
-  color: #0b1613;
+.amazon:hover {
+  background: #1a1a1a;
+  color: #fff;
 }
 
+/* FOOTER */
 footer {
+  padding: 60px 20px;
   text-align: center;
-  padding: 30px;
-  font-size: 0.8rem;
-  color: #9fcab6;
+  font-size: 0.85rem;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
+<nav>
   <img src="logo.png">
   <div>
-    <a href="index.html">Home</a>
-    <a href="#">Contact Us</a>
+    <a href="index.html">Shop</a>
+    <a href="#">Contact</a>
   </div>
-</div>
+</nav>
 
-<div class="product-container">
+<section class="product">
 
-  <!-- LEFT -->
   <div>
-    <div class="main-image">
+    <div class="main">
       <img src="1.jpg" id="mainImg">
     </div>
 
@@ -129,8 +130,7 @@ footer {
     </div>
   </div>
 
-  <!-- RIGHT -->
-  <div class="product-info">
+  <div class="info">
     <h1>
       YogiVerse™ Self Adhesive Wall Hooks | Multipurpose Antler Deer Head Decorative Wall Hook
     </h1>
@@ -146,18 +146,18 @@ footer {
     <div class="price">₹299</div>
 
     <a
+      class="amazon"
       href="https://www.amazon.in/"
       target="_blank"
-      class="amazon-btn"
     >
       Available on Amazon
     </a>
   </div>
 
-</div>
+</section>
 
 <footer>
-  © 2026 YogiVerse — A brand operated by Akshar Sells
+  © 2026 YogiVerse — A brand by Akshar Sells
 </footer>
 
 <script>
