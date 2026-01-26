@@ -8,171 +8,140 @@
 <style>
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: linear-gradient(135deg,#0b1613,#111f1a);
-  color: #e6f3ed;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
+/* NAVBAR */
+nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
-  background: rgba(10,20,18,0.9);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  align-items: center;
+  padding: 26px 60px;
 }
 
-.nav-left img {
+nav img {
   height: 34px;
 }
 
-.nav-center input {
-  width: 320px;
-  padding: 9px 14px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-}
-
-.nav-right a {
-  margin-left: 22px;
+nav a {
+  margin-left: 28px;
   text-decoration: none;
-  color: #cfe8dc;
+  color: #1a1a1a;
   font-size: 0.95rem;
 }
 
-.nav-right a:hover {
-  color: #c9a24d;
+nav a:hover {
+  opacity: 0.6;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px 60px;
+  padding: 100px 20px 80px;
 }
 
 .hero h1 {
-  color: #e8d9a6;
-  margin-bottom: 10px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 14px;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 520px;
   margin: auto;
-  color: #cfe8dc;
+  color: #666;
+  font-size: 1rem;
 }
 
-/* ===== PRODUCT GRID ===== */
+/* PRODUCTS GRID */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 26px;
-  padding: 50px 40px 80px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
+  padding: 40px 40px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
 }
 
-.product-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 16px;
+.product {
   text-align: center;
-  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.6);
-}
-
-.product-card img {
+.product img {
   width: 100%;
-  max-height: 180px;
+  max-height: 220px;
   object-fit: contain;
+  background: #f7f7f7;
 }
 
-.product-card h3 {
-  font-size: 0.95rem;
-  margin: 12px 0;
+.product h3 {
+  margin: 14px 0 6px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.price {
-  color: #c9a24d;
-  font-weight: 600;
+.product span {
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.product-card a {
+.product a {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background: #1fa86a;
-  color: #fff;
-  text-decoration: none;
+  margin-top: 8px;
   font-size: 0.85rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  border-bottom: 1px solid #ccc;
 }
 
-.product-card a:hover {
-  background: #c9a24d;
-  color: #0b1613;
+.product a:hover {
+  border-color: #1a1a1a;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
+  padding: 60px 20px;
   text-align: center;
-  padding: 30px;
-  font-size: 0.8rem;
-  color: #9fcab6;
+  font-size: 0.85rem;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="navbar">
-  <div class="nav-left">
-    <img src="logo.png" alt="YogiVerse">
+<nav>
+  <img src="logo.png" alt="YogiVerse">
+  <div>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
   </div>
+</nav>
 
-  <div class="nav-center">
-    <input type="text" placeholder="Search products…">
-  </div>
-
-  <div class="nav-right">
-    <a href="#">Home</a>
-    <a href="#products">View Products</a>
-    <a href="#footer">Contact Us</a>
-  </div>
-</div>
-
-<!-- HERO -->
 <section class="hero">
   <h1>Modern Home Essentials</h1>
   <p>
-    YogiVerse is a lifestyle brand from the house of Akshar Sells,
-    creating thoughtfully designed products that blend utility with aesthetics.
+    Thoughtfully designed everyday products that blend function,
+    simplicity and modern aesthetics.
   </p>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
+<section class="products">
 
-  <div class="product-card">
+  <div class="product">
     <img src="1.jpg" alt="Antler Hook">
     <h3>Self Adhesive Antler Wall Hook</h3>
-    <div class="price">₹299</div>
+    <span>₹299</span><br>
     <a href="product.html">View Product</a>
   </div>
 
 </section>
 
-<footer id="footer">
-  © 2026 YogiVerse — A brand operated by Akshar Sells
+<footer>
+  © 2026 YogiVerse — A brand by Akshar Sells
 </footer>
 
 </body>
