@@ -6,192 +6,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  color: #e6f3ed;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI,system-ui,sans-serif;
+  color:#e6f3ed;
   background:
-    radial-gradient(circle at top, rgba(40,90,70,0.45), transparent 45%),
-    linear-gradient(135deg, #081411, #0e221c);
+    radial-gradient(circle at top, rgba(40,90,70,.45), transparent 45%),
+    linear-gradient(135deg,#081411,#0e221c);
 }
 
-/* ===== NAVBAR ===== */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 18px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(8,20,17,0.9);
-  backdrop-filter: blur(10px);
+/* ===== HEADER ===== */
+header{
+  position:sticky;
+  top:0;
+  padding:18px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(8,20,17,.92);
+  backdrop-filter:blur(10px);
+}
+header img{height:34px;cursor:pointer}
+header a{
+  margin-left:26px;
+  text-decoration:none;
+  color:#cfe8dc;
+  font-size:.9rem;
+}
+header a:hover{color:#c9a24d}
+
+/* ===== PRODUCT ===== */
+.container{
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
 }
 
-nav img {
-  height: 34px;
-  cursor: pointer;
+/* IMAGES */
+.gallery{
+  background:rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:18px;
+  border:1px solid rgba(201,162,77,.25);
+}
+.main-img{
+  aspect-ratio:1/1;
+  background:#fff;
+  border-radius:12px;
+}
+.main-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.thumbs{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+  margin-top:12px;
+}
+.thumbs img{
+  aspect-ratio:1/1;
+  background:#fff;
+  border-radius:6px;
+  cursor:pointer;
+  object-fit:contain;
+  opacity:.75;
+}
+.thumbs img:hover{opacity:1}
+
+/* INFO */
+.info h1{
+  font-size:1.5rem;
+  margin-bottom:16px;
+}
+.price{
+  font-size:1.4rem;
+  color:#c9a24d;
+  margin:18px 0;
+}
+.info ul{line-height:1.7}
+.info li{margin-bottom:10px}
+.amazon-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 36px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#1fa86a,#0b7d57);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+.amazon-btn:hover{
+  background:linear-gradient(135deg,#c9a24d,#b18a3d);
+  color:#0b1613;
 }
 
-nav a {
-  margin-left: 28px;
-  text-decoration: none;
-  color: #cfe8dc;
-  font-size: 0.9rem;
+/* FOOTER */
+footer{
+  padding:40px 20px;
+  text-align:center;
+  font-size:.85rem;
+  color:#9fcab6;
+  background:rgba(0,0,0,.35);
 }
 
-nav a:hover {
-  color: #c9a24d;
-}
-
-/* ===== PRODUCT LAYOUT ===== */
-.product-page {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-/* ===== IMAGE GALLERY ===== */
-.gallery {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  padding: 20px;
-  border: 1px solid rgba(201,162,77,0.25);
-}
-
-.main-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.main-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.thumbs {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.thumbs img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  background: #ffffff;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.75;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.thumbs img:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* ===== PRODUCT INFO ===== */
-.info h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
-.price {
-  font-size: 1.4rem;
-  color: #c9a24d;
-  margin-bottom: 18px;
-}
-
-.bullets {
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.bullets li {
-  margin-bottom: 10px;
-}
-
-/* ===== AMAZON BUTTON ===== */
-.amazon-btn {
-  display: inline-block;
-  padding: 14px 36px;
-  border-radius: 40px;
-  background: linear-gradient(135deg, #1fa86a, #0b7d57);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease;
-}
-
-.amazon-btn:hover {
-  transform: scale(1.06);
-  background: linear-gradient(135deg, #c9a24d, #b18a3d);
-  color: #0b1613;
-}
-
-/* ===== DESCRIPTION ===== */
-.description {
-  margin-top: 30px;
-  font-size: 0.95rem;
-  color: #cfe8dc;
-  line-height: 1.7;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  margin-top: 80px;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #9fcab6;
-  background: rgba(0,0,0,0.3);
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  .product-page {
-    grid-template-columns: 1fr;
-  }
+/* MOBILE */
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
+<header>
   <a href="index.html">
     <img src="logo.png" alt="YogiVerse">
   </a>
   <div>
     <a href="index.html">Home</a>
-    <a href="index.html#products">Products</a>
+    <a href="index.html#products">Shop</a>
     <a href="#contact">Contact</a>
   </div>
-</nav>
+</header>
 
-<!-- PRODUCT -->
-<section class="product-page">
+<section class="container">
 
-  <!-- LEFT IMAGES -->
   <div class="gallery">
     <div class="main-img">
-      <img src="1.jpg" id="mainImage" alt="Antler Wall Hook">
+      <img src="1.jpg" id="mainImage">
     </div>
-
     <div class="thumbs">
       <img src="1.jpg" onclick="swap(this.src)">
       <img src="2.jpg" onclick="swap(this.src)">
@@ -203,58 +152,40 @@ footer {
     </div>
   </div>
 
-  <!-- RIGHT INFO -->
   <div class="info">
     <h1>
       YogiVerse™ Self Adhesive Wall Hooks | Multipurpose Antler Deer Head Decorative Wall Hook |
-      No Drill Strong Adhesive Hooks for Keys, Bags, Clothes, Towels & Coats |
-      Bathroom, Kitchen, Bedroom, Door
+      No Drill Strong Adhesive Hooks for Keys, Bags, Clothes, Towels & Coats
     </h1>
+
+    <ul>
+      <li>No drilling | Damage-free installation</li>
+      <li>Multipurpose daily use</li>
+      <li>Strong adhesive & durable ABS plastic</li>
+      <li>Decorative antler design</li>
+      <li>Bathroom, kitchen, bedroom & door use</li>
+    </ul>
 
     <div class="price">₹299</div>
 
-    <ul class="bullets">
-      <li><b>No Drilling | Damage-Free Installation</b> – Peel & stick design, perfect for rented homes</li>
-      <li><b>Multipurpose Daily Use</b> – Ideal for keys, bags, caps, towels & accessories</li>
-      <li><b>Strong Adhesive & Durable Build</b> – Premium ABS plastic, rust-free</li>
-      <li><b>Decorative Antler Design</b> – Modern, stylish & functional</li>
-      <li><b>Wide Application</b> – Bathroom, kitchen, bedroom, wardrobes & doors</li>
-    </ul>
-
-    <a
-      href="https://www.amazon.in/"
-      target="_blank"
-      class="amazon-btn"
-    >
+    <a href="https://www.amazon.in/" target="_blank" class="amazon-btn">
       Available on Amazon
     </a>
-
-    <div class="description">
-      Upgrade your home organization with the YogiVerse™ Multipurpose Self Adhesive Wall Hook,
-      designed to combine functionality with modern décor. Featuring a unique antler deer design,
-      this hook adds a decorative look while keeping your space organized and clutter-free.<br><br>
-
-      The strong self-adhesive backing allows quick installation without drilling or wall damage.
-      Crafted from durable ABS plastic, it is water-resistant and suitable for everyday use in
-      bathrooms, kitchens, bedrooms, entryways and offices.
-    </div>
   </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
-  <p><b>YogiVerse</b> — A lifestyle brand from the house of Akshar Sells</p>
   <p>
     📧 yogiverse.co@gmail.com<br>
     📧 aksharsells.surat@gmail.com<br>
     📞 WhatsApp: +91 70690 62424
   </p>
-  <p>© 2026 YogiVerse. All rights reserved.</p>
+  <p>© 2026 YogiVerse — A brand by Akshar Sells</p>
 </footer>
 
 <script>
-function swap(src) {
+function swap(src){
   document.getElementById("mainImage").src = src;
 }
 </script>
