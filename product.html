@@ -16,16 +16,15 @@ body{
     linear-gradient(135deg,#081411,#0e221c);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   position:sticky;
   top:0;
-  padding:18px 50px;
+  padding:18px 48px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(8,20,17,.92);
-  backdrop-filter:blur(10px);
+  background:rgba(8,20,17,.95);
 }
 header img{height:34px;cursor:pointer}
 header a{
@@ -36,19 +35,19 @@ header a{
 }
 header a:hover{color:#c9a24d}
 
-/* ===== PRODUCT ===== */
+/* PRODUCT */
 .container{
-  max-width:1200px;
-  margin:60px auto;
+  max-width:1100px;
+  margin:70px auto;
   padding:20px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:50px;
 }
 
-/* IMAGES */
+/* gallery */
 .gallery{
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.06);
   border-radius:18px;
   padding:18px;
   border:1px solid rgba(201,162,77,.25);
@@ -79,21 +78,23 @@ header a:hover{color:#c9a24d}
 }
 .thumbs img:hover{opacity:1}
 
-/* INFO */
+/* info */
 .info h1{
-  font-size:1.5rem;
+  font-size:1.4rem;
+  line-height:1.4;
   margin-bottom:16px;
 }
-.price{
-  font-size:1.4rem;
-  color:#c9a24d;
-  margin:18px 0;
+.info ul{
+  line-height:1.7;
+  margin-bottom:18px;
 }
-.info ul{line-height:1.7}
-.info li{margin-bottom:10px}
+.price{
+  font-size:1.5rem;
+  color:#c9a24d;
+  margin-bottom:22px;
+}
 .amazon-btn{
   display:inline-block;
-  margin-top:22px;
   padding:14px 36px;
   border-radius:40px;
   background:linear-gradient(135deg,#1fa86a,#0b7d57);
@@ -106,7 +107,7 @@ header a:hover{color:#c9a24d}
   color:#0b1613;
 }
 
-/* FOOTER */
+/* footer */
 footer{
   padding:40px 20px;
   text-align:center;
@@ -115,7 +116,6 @@ footer{
   background:rgba(0,0,0,.35);
 }
 
-/* MOBILE */
 @media(max-width:900px){
   .container{grid-template-columns:1fr}
 }
@@ -125,12 +125,10 @@ footer{
 <body>
 
 <header>
-  <a href="index.html">
-    <img src="logo.png" alt="YogiVerse">
-  </a>
+  <a href="index.html"><img src="logo.png" alt="YogiVerse"></a>
   <div>
     <a href="index.html">Home</a>
-    <a href="index.html#products">Shop</a>
+    <a href="index.html#products">Products</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
@@ -168,8 +166,8 @@ footer{
 
     <div class="price">₹299</div>
 
-    <a href="https://www.amazon.in/" target="_blank" class="amazon-btn">
-      Available on Amazon
+    <a href="https://www.amazon.in/dp/B0GJL3CQQV" target="_blank" class="amazon-btn">
+      Buy on Amazon
     </a>
   </div>
 
